@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="ie_11_scroll">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="hhhwidth=device-width, initial-scale=1">
+        <title>Face Detection for Attendance Management System</title>
+
+        <!-- CSS -->
+        <link rel="icon" type="image/png" href="{% static 'home/images/icons/icon.png' %}"/>
+        <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'home/css/templatemo_style.css' %}">
+
+    </head>
+    <body>
+		<!-- Top menu -->
+        <div class="show-menu">
+            <a href="#" class="shadow-top-down" >+</a>   
+            
+        </div>
+        <nav class="main-menu shadow-top-down">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'employee_insert' %}">Manage Employee</a></li>
+                <li><a href="{% url 'employee_list' %}">Employee List</a></li>
+                <li><a href="{% url 'attendance_insert' %}">Manage Attendance</a></li>
+                <li><a href="{% url 'attendance_list' %}">Attendance Report</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+        <!-- Home -->
+        <section id="templatemo_home">
+            <div class="container">
+                <div class="templatemo_home_inner_wapper">
+                    <h1 class="text-center"><b><i>Face Detection for Attendance Management System</i></b></h1>
+                </div>                <div class="templatemo_home_inner_wapper btn_wapper">
+                    <div class="col-sm-6">
+                        <a href="{% url 'train_system' %}" class="btn col-xs-12 scroll_effect shadow-top-down">
+                            <i class="fa fa-refresh"></i> Train
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="{% url 'recognize_face' %}" class="btn col-xs-12 scroll_effect shadow-top-down">
+                            <i class="fa fa-video-camera"></i> Face Recognizer
+                        </a>
+                    </div>
+                    <div class="templatemo_home_inner_wapper">
+                    <p class="text-center">
+                        <h3 class="text-center"><i>Note:<b> If you add new dataset of Employee in the system, than please train the system before proceeding for Face Detection.</i></b></h3>
+                    </p>
+                </div>
+                </div>
+            </div>
+        </section>
+     <header class="template_header">
+                    <h1 class="text-center"><span>...</span> Description <span>...</span></h1>
+                </header>
+        <!-- Features -->
+        <!-- Footer -->
+<footer class="page-footer font-small teal pt-4">
+
+  <!-- Footer Text -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <br>
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <h5 class="text-uppercase font-weight-bold"><i>Employee Management</i></h5>
+        <p>Only the admin has the right to add new Employee along with their details. Admin should register the face of Employee during registration process.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mb-md-0 mb-3">
+
+        <!-- Content -->
+        <i class="fa fa-video-camera"></i>
+        <h5 class="text-uppercase font-weight-bold"><i>Face Recognition</i></h5>
+        <p>After the registration process the system should train and the system will be able to detect face for attendace.</p>
+
+      </div>
+      <!-- Grid column -->
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mb-md-0 mb-3">
+
+        <!-- Content -->
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <h5 class="text-uppercase font-weight-bold"><i>Employee Attendance</i></h5>
+        <p>Only the Admin has the right to access information of Employee. Admin can Update, add new employee, delete and view the details of Employee.</p>
+
+      </div>
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mb-md-0 mb-3">
+
+        <!-- Content -->
+        <i class="fa fa-file" aria-hidden="true"></i>
+        <h5 class="text-uppercase font-weight-bold"><i>Attendance Report</i></h5>
+        <p>Admin can view the Attendance the report of Employee but if Employee wants to view than they should take permission from Admin.</p>
+
+      </div>
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Text -->
+
+  <!-- Copyright -->
+  
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+        <!-- Footer-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 footer-copyright">
+                    <br>
+                    <br>
+                    <br>
+                        <p>Copyright &copy; 2021 Ashish Shrestha</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <!-- require plugins -->
+        <script src="{% static 'home/js/jquery.min.js' %}"></script>
+        <script src="{% static 'home/js/jquery-ui.min.js' %}"></script>
+        <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'home/js/jquery.parallax.js' %}"></script>
+        <!-- template mo config script -->
+        <script src="{% static 'home/js/templatemo_scripts.js' %}"></script>
+
+    </body>
+</html>

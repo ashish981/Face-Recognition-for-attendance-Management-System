@@ -1,0 +1,45 @@
+{% extends "base_att_form.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.name|as_crispy_field}}
+    <div class="row">
+        <div class="col-md-6">
+            {{form.employee_id|as_crispy_field}}
+        </div>
+        <div class="col-md-6">
+            {{form.group|as_crispy_field}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            {{form.date|as_crispy_field}}
+        </div>
+        <div class="col-md-6">
+            {{form.attendance_status|as_crispy_field}}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-clipboard-check"></i>
+                Submit</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'attendance_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-id-card-alt"></i><i> Attendance Records</i>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/home" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-home"></i> Back to home
+            </a>
+        </div>
+    </div>
+
+</form>
+{% endblock content %}

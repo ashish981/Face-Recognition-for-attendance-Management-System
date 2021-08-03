@@ -1,0 +1,54 @@
+{% extends "base_std_list.html" %}
+
+
+{% block content %}
+
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Employee Name</td>
+            <td>Employee ID</td>
+            <td>Department</td>
+            <td>Gender</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Photo Status</td>
+            <td>
+                <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-user-plus"></i> Add New
+                </a>
+
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employee_list %}
+            <tr>
+                <td>{{employee.name}}</td>
+                <td>{{employee.employee_id}}</td>
+                <td>{{employee.group}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
+                <td>{{employee.photo_status}}</td>
+                <td>
+                    <a href="{% url 'employee_update' employee.id %}" class="btn px-0">
+                        <i class="fas fa-user-edit"></i>
+                    </a>
+                    <form action="{% url 'employee_delete' employee.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="fa fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                    <a href="{% url 'collect_data' employee.id %}" class="btn px-0">
+                        <i class="fa fa-camera fa-lg float-right"></i>
+                    </a>
+
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
